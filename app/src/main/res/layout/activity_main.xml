@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <TextView
+            android:id="@+id/srvLocationResponseTV"
+            android:text="Location response srv"
+            android:layout_width="253dp"
+            android:layout_height="45dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="12dp"
+            tools:layout_editor_absoluteY="258dp"/>
+
+    <TextView
+            android:id="@+id/srvContentResponseTV"
+            android:text="Location response srv"
+            android:layout_width="256dp"
+            android:layout_height="51dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toBottomOf="@+id/locationUpdDbTV"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="12dp"/>
+
+    <TextView
+            android:id="@+id/fileSavedTV"
+            android:text="File saved to storage"
+            android:layout_width="252dp"
+            android:layout_height="49dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toBottomOf="@+id/srvContentResponseTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            />
+
+    <TextView
+            android:id="@+id/contentStatusUpdTV"
+            android:text="Content status update"
+            android:layout_width="252dp"
+            android:layout_height="51dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toBottomOf="@+id/fileSavedTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            />
+
+    <TextView
+            android:id="@+id/contentSavedDbTV"
+            android:text="Content saved to DB"
+            android:layout_width="253dp"
+            android:layout_height="41dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toBottomOf="@+id/srvLocationResponseTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"/>
+
+    <TextView
+            android:id="@+id/locationUpdDbTV"
+            android:text="Location status updated to DB"
+            android:layout_width="253dp"
+            android:layout_height="52dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toBottomOf="@+id/contentSavedDbTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="4dp"/>
+
+    <Button
+            android:id="@+id/locationBT"
+            android:drawableTop="@drawable/ic_add_location"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintStart_toEndOf="@+id/username"
+            android:layout_marginStart="8dp"/>
+
+    <Button
+            android:id="@+id/sendLocationBT"
+            android:drawableTop="@drawable/ic_search"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="652dp"
+            app:layout_constraintStart_toEndOf="@+id/locationBT"
+            android:layout_marginBottom="25dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+            android:id="@+id/getContentBT"
+            android:drawableTop="@drawable/ic_download"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toEndOf="@+id/sendLocationBT"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="25dp"/>
+
+    <Button
+            android:id="@+id/clearAll"
+            android:drawableTop="@drawable/ic_clear"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toEndOf="@+id/getContentBT"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="25dp"
+            android:layout_marginStart="8dp"/>
+
+    <EditText
+            android:id="@+id/username"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:inputType="textPersonName"
+            android:text="Input your name"
+            android:ems="8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="25dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"/>
+
+    <CheckedTextView
+            android:id="@+id/ctvLatitude"
+            android:text="Latitude:"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:layout_width="351dp"
+            android:layout_height="29dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/ctvLongitude"
+            android:layout_marginStart="8dp"/>
+
+
+    <CheckedTextView
+            android:id="@+id/ctvLongitude"
+            android:text="Longitude:"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:layout_width="351dp"
+            android:layout_height="30dp"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="64dp"
+            android:layout_marginStart="8dp"/>
+
+    <fragment
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            tools:ignore="MissingConstraints"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
